@@ -1,0 +1,27 @@
+<!-- IBM Dark Colors #DFE9E9 #6D7777 #3C4646 #55A8FD --> .random {}
+
+body {
+    background-color: #3C4646 !important;
+}
+
+[class*='col-'] {
+    background-color: #6D7777!important;
+}
+
+h1 {
+    color: #DFE9E9!important;
+    !important;
+}
+
+h3 {
+    color: #DFE9E9!important;
+}
+
+p {
+    color: #DFE9E9!important;
+}
+
+.grow:hover {
+    transform: scale(1.1);
+    box-shadow: inset 400px 400px 0 0 #55A8FD;
+}
