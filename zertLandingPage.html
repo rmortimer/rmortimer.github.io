@@ -1,0 +1,316 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IBM z/OSMF</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- <link rel="stylesheet" href="css/font--medium-bold.css" /> -->
+    <link rel="stylesheet" href="css/font--roman-bold.css" />
+    <link rel="stylesheet" href="css/font--light-medium.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/chart.css" />
+    <link rel="stylesheet" href="css/fancyTable.css" />
+
+</head>
+
+<body>
+    <script src="https://d3js.org/d3.v4.min.js" data-semver="4.0.0" data-require="d3@*"></script>
+    <script src="js/loader.js"></script>
+    <!--This div is for the artificial loading screen. Uses loader.css and main.js-->
+
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left "></div>
+        <div class="loader-section section-right "></div>
+
+    </div>
+
+
+
+    <header id="zosmf-header">
+
+        <div id="zosmf-header-logo " class="header-logo ">
+            <img id="zosmf-header-z-icon " src="resources/z_icon_blue_44x38.png " />
+            <h1 id="zosmf-header-title ">Title needs to be changed</h1>
+        </div>
+        <!--Search bar-->
+        <!--        <div id="zosmf-header-search ">
+            <input type="text " name="search " id="search " placeholder="search ">
+            <button type="button " name="search-button " id="search-button "></button>
+        </div>-->
+
+        <ul id="zosmf-header-actions ">
+            <li>
+                <button type="button " name="refresh-button " id="refresh-button"></button>
+            </li>
+            <li class="user-actions ">
+                <div class="user-graphic ">
+                    <img class="user-portrait" src="resources/user-portrait-christina_36.png " />
+
+                    <div class="user-status"></div>
+                </div>
+                <span class="user-id ">Jess</span>
+                <button name="user-id-menu-button" class="user-id-menu-button"></button>
+            </li>
+            <li>
+                <button type="button " name="alerts-button" id="alerts-button"></button>
+            </li>
+            <li>
+                <button type="button " name="settings-button" id="settings-button"></button>
+            </li>
+            <li>
+                <button type="button " name="information-button" id="information-button"></button>
+            </li>
+
+        </ul>
+
+    </header>
+
+    <nav id="tabbed-zosmf-main-navigation" class="tabbed-main-navigation ">
+        <ul id="tabbed-zosmf-tasks " class="tabbed-tasks ">
+            <li id="Plug-Ins" class="current">Dashboard Overview</li>
+            <li id="Report-Generation">Report Generation</li>
+            <li id="Workflow">Database Management</li>
+        </ul>
+        <div id="tabbed-zosmf-task-application-separator" class="menu-separator " style="display:none; "></div>
+        <ul id="tabbed-zosmf-applications" class="tabbed-applications ">
+            <li id="tabbed-zosmf-application-drop-area-indicator" class="drop-area-indicator " style="display: none; "></li>
+        </ul>
+    </nav>
+
+    <div id="zosmf-main" class="main-contents-container ">
+        <section id="Plug-Ins-Workarea" class="main-workarea ">
+            <h1 class="greeting ">
+              <span class="salutation ">Welcome to your dashboard, </span>
+              <span class="greeting-user-id ">Jess</span>
+            </h1>
+            <ul id="zosmf-plugin-tiles" class="tile-viewer ">
+                <li id="configuration-assistant" class="tile application ">
+                    <div class="content ">
+                        <div class="content application-icon " style="background-image: url( 'resources/checklist_32.svg'); "></div>
+                    </div>
+                    <div class="title ">Getting Started &amp; Whats New</div>
+                    <a href="# " class="status ">2 New Tutorials</a>
+                </li>
+                <li id="workload-management" class="tile application ">
+                    <div class="content ">
+                        <div class="content application-icon " style="background-image: url( 'resources/z_icon.png'); "></div>
+                    </div>
+                    <div class="title ">Manage zERT Protected Systems</div>
+                    <a href="# " class="status ">1 LPAR Added by other user since your last login</a>
+                </li>
+                <li id="software-managment" class="tile application ">
+                    <div class="content application-icon " style="background-image: url( 'resources/warn_32.svg'); "></div>
+                    <div class="title ">Security Warnings</div>
+                    <a href="# " class="status ">Three Patterns of interest detected since your last login </a>
+                </li>
+                <li id="capacity-provisioning" class="tile application ">
+                    <div class="content ">
+                        <div class="content application-icon " style="background-image: url( 'resources/view_32.svg');"></div>
+                    </div>
+                    <div class="title ">User Defined Watch Pattern: LPAR 1 Traffic Health Check </div>
+                    <a href="# " class="status ">Runs everyday 18:00 ET</a>
+                </li>
+
+            </ul>
+        </section>
+
+
+        <section id="Report-Generation-Workarea" class="main-workarea " style="display:none ">
+            <h1 class="greeting ">
+              <span class="salutation ">Report </span>
+              <span class="greeting-user-id ">Generation</span>
+            </h1>
+            <ul id="zosmf-plugin-tiles" class="tile-viewer ">
+                <!--ID Must match spreadSheet Content Below -->
+                <li id="spreadSheet" class="tile application ">
+                    <div class="content ">
+                        <div class="content application-icon " style="background-image: url( 'resources/list-view_32.svg'); "></div>
+                    </div>
+                    <div class="title ">Generate Spread Sheet</div>
+                    <a href="# " class="status ">0 User Defined Reports</a>
+                </li>
+                <li id="workload-management" class="tile application ">
+                    <div class="content ">
+                        <div class="content application-icon " style="background-image: url( 'resources/line_chart_32.svg'); "></div>
+                    </div>
+                    <div class="title ">Generate Line Chart</div>
+                    <a href="# " class="status ">4 User Defined Reports</a>
+                </li>
+                <li id="software-managment" class="tile application ">
+                    <div class="content application-icon " style="background-image: url( 'resources/bubble-chart_32.svg'); "></div>
+                    <div class="title ">Generate Bubble Chart</div>
+                    <a href="# " class="status ">0 User defined reports </a>
+                </li>
+                <!--ID Must match barGraphContent Below -->
+                <li id="barGraph" class="tile application ">
+                    <div class="content ">
+                        <div class="content application-icon " style="background-image: url( 'resources/bar-chart_32.svg'); "></div>
+                    </div>
+                    <div class="title ">Generate Bar Graph</div>
+                    <a href="# " class="status ">2 User Defined Reports</a>
+                </li>
+                <!--ID Must match pieChartContent Below -->
+                <li id="pieChart" class="tile application ">
+                    <div class="content ">
+                        <div class="content application-icon " style="background-image: url( 'resources/pie-chart_32.svg'); "></div>
+                    </div>
+                    <div class="title ">Generate Pie Chart</div>
+                    <a href="# " class="status ">6 User Defined Reports</a>
+                </li>
+                <li id="capacity-provisioning" class="tile application ">
+                    <div class="content ">
+                        <div class="content application-icon " style="background-image: url( 'resources/activity_32.svg'); "></div>
+                    </div>
+                    <div class="title ">User Defined Report: LPAR 2 Security Health Check</div>
+                    <a href="# " class="status ">Last Ran Febuary 15 2017</a>
+                    <a href="# " class="status ">Type: Pie Chart</a>
+                </li>
+
+            </ul>
+        </section>
+
+        <section id="Database-Management-Workarea" class="main-workarea " style="display:none ">
+            <h1 class="greeting ">
+              <span class="salutation ">Database </span>
+              <span class="greeting-user-id ">Management</span>
+            </h1>
+            <ul id="zosmf-plugin-tiles" class="tile-viewer ">
+                <li id="configuration-assistant" class="tile application ">
+                    <div class="content ">
+                        <div class="content application-icon " style="background-image: url( 'resources/database_32.svg'); "></div>
+                    </div>
+                    <div class="title ">View Database Layout</div>
+                    <a href="# " class="status ">126,423 Records Maintained</a>
+                </li>
+                <li id="workload-management" class="tile application ">
+                    <div class="content ">
+                        <div class="content application-icon " style="background-image: url( 'resources/retrieve_32.svg'); "></div>
+                    </div>
+                    <div class="title ">Retrieve/Import New Records</div>
+                    <a href="# " class="status ">1 New Import file detected on System</a>
+                </li>
+                <li id="software-managment" class="tile application ">
+                    <div class="content application-icon " style="background-image: url( 'resources/archive_32.svg'); "></div>
+                    <div class="title ">Disk space,Indexing, and archiving</div>
+                    <a href="# " class="status ">12GB Currently in use </a>
+                </li>
+
+            </ul>
+        </section>
+
+        <!--PIE CHART TILE 
+        PIE CHART TILE 
+        PIE CHART TILE 
+        PIE CHART TILE -->
+        <section id="pieChartContent" class="main-workarea appContentWorkSpace" style="display:none ">
+            <!-- Donut Chart with legend -->
+            <div id="chart"></div>
+            <script src="js/donutChart.js"></script>
+        </section>
+
+        <section id="barGraphContent" class="main-workarea appContentWorkSpace" style="display:none ">
+            <div id="stackedbars">
+                <h1>Segments</h1>
+                <svg id="stacked" width="600" height="500"></svg>
+            </div>
+            <script src="js/stackedBarChart.js"></script>
+        </section>
+        <section id="spreadSheetContent" class="main-workarea appContentWorkSpace" style="display:none ">
+            <div class="customTable">
+                <!--Test Divs-->
+                <table class="customers">
+                    <tr>
+                        <th>IP Address</th>
+                        <th>Security Protocol</th>
+                        <th>Country</th>
+                    </tr>
+                    <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                    </tr>
+                    <tr>
+                        <td>Berglunds snabbköp</td>
+                        <td>Christina Berglund</td>
+                        <td>Sweden</td>
+                    </tr>
+                    <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td>
+                        <td>Mexico</td>
+                    </tr>
+                    <tr>
+                        <td>Ernst Handel</td>
+                        <td>Roland Mendel</td>
+                        <td>Austria</td>
+                    </tr>
+                    <tr>
+                        <td>Island Trading</td>
+                        <td>Helen Bennett</td>
+                        <td>UK</td>
+                    </tr>
+                    <tr>
+                        <td>Königlich Essen</td>
+                        <td>Philip Cramer</td>
+                        <td>Germany</td>
+                    </tr>
+                    <tr>
+                        <td>Laughing Bacchus Winecellars</td>
+                        <td>Yoshi Tannamuri</td>
+                        <td>Canada</td>
+                    </tr>
+                    <tr>
+                        <td>Magazzini Alimentari Riuniti</td>
+                        <td>Giovanni Rovelli</td>
+                        <td>Italy</td>
+                    </tr>
+                    <tr>
+                        <td>North/South</td>
+                        <td>Simon Crowther</td>
+                        <td>UK</td>
+                    </tr>
+                    <tr>
+                        <td>Paris spécialités</td>
+                        <td>Marie Bertrand</td>
+                        <td>France</td>
+                    </tr>
+                </table>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+    </div>
+
+    <footer>
+        <div class="versionAndCopyright ">
+            <span class="copyright ">
+              © Copyright IBM Corp. 2009, 2016
+            </span> &nbsp;&nbsp;&nbsp;
+            <span class="version ">
+              z/OS Management Facility Version 2.3
+            </span>
+        </div>
+        <a href="# " class="product-links ">Links</a>
+        <div id="ibm-logo">
+            <img src="resources/IBMLogoTiny.gif " />
+        </div>
+
+    </footer>
+
+    <script src="js/main.js "></script>
+
+</body>
+
+</html>
